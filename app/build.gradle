@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'me.tatarka.retrolambda'
 
 def getDate() {
     def date = new Date()
@@ -27,7 +29,7 @@ android {
     }
 
     compileSdkVersion 24
-    buildToolsVersion "23.0.3"
+    buildToolsVersion '24.0.0 rc3'
     defaultConfig {
         applicationId "vn.dinosys.dinosys_apptemplate"
         minSdkVersion 15
@@ -46,15 +48,32 @@ android {
     }
     productFlavors {
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 ext {
     supportLibVersion = '24.0.0'
+    butterknifeLibVersion = '8.1.0'
+    calligraphyLibVersion = '2.2.0'
 }
 
 dependencies {
     compile project(':data')
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
+    // Android Support AppCompat
     compile "com.android.support:appcompat-v7:${supportLibVersion}"
+    compile "com.android.support:design:${supportLibVersion}"
+    // Butter Knife
+    compile "com.jakewharton:butterknife:${butterknifeLibVersion}"
+    apt "com.jakewharton:butterknife-compiler:${butterknifeLibVersion}"
+    // Fonts Support
+    compile "uk.co.chrisjenx:calligraphy:${calligraphyLibVersion}"
+    compile 'com.android.support:support-v4:24.0.0'
+    compile 'com.android.support:recyclerview-v7:24.0.0'
+    compile 'com.android.support:design:24.0.0'
 }
