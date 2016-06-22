@@ -6,7 +6,6 @@ def getDate() {
     return formattedDate
 }
 
-//def gitTag = 'git describe --tags'.execute([], project.rootDir).text.trim()
 def gitCommitCount = 100 + Integer.parseInt('git rev-list --count HEAD'.execute([], project.rootDir).text.trim())
 
 android {
@@ -14,8 +13,9 @@ android {
     signingConfigs {
         release_key {
             storeFile file("keystore/dinosys_release_keystore.jks")
-            keyAlias 'RELEASE_KEY'
+            keyAlias 'DINOSYS_RELEASE_KEYSTORE'
             keyPassword 'dino1234'
+            storePassword 'dino1234'
         }
     }
 
@@ -53,8 +53,8 @@ ext {
 }
 
 dependencies {
+    compile project(':data')
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile "com.android.support:appcompat-v7:${supportLibVersion}"
-    compile project(':data')
 }
