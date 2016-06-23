@@ -12,6 +12,7 @@ import vn.dinosys.dinosys_apptemplate.ui.activity.template.FullscreenActivity;
 import vn.dinosys.dinosys_apptemplate.ui.activity.template.NavigationDrawer;
 import vn.dinosys.dinosys_apptemplate.ui.activity.template.ScrollingActivity;
 import vn.dinosys.dinosys_apptemplate.ui.activity.template.SettingsActivity;
+import vn.dinosys.dinosys_apptemplate.ui.activity.template.TabActivity;
 import vn.dinosys.dinosys_apptemplate.ui.activity.template.UserListActivity;
 
 public class MainActivity extends BaseActivity {
@@ -53,7 +54,7 @@ public class MainActivity extends BaseActivity {
                     intent = new Intent(MainActivity.this, SettingsActivity.class);
                     break;
                 case 8:
-                    intent = new Intent(MainActivity.this, FABActivity.class);
+                    intent = new Intent(MainActivity.this, TabActivity.class);
                     break;
                 default:
                     break;
