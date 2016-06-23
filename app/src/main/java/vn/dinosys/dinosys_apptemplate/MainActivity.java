@@ -9,6 +9,8 @@ import butterknife.BindView;
 import vn.dinosys.dinosys_apptemplate.ui.activity.base.BaseActivity;
 import vn.dinosys.dinosys_apptemplate.ui.activity.template.FABActivity;
 import vn.dinosys.dinosys_apptemplate.ui.activity.template.FullscreenActivity;
+import vn.dinosys.dinosys_apptemplate.ui.activity.template.LoginActivity;
+import vn.dinosys.dinosys_apptemplate.ui.activity.template.MapsActivity;
 import vn.dinosys.dinosys_apptemplate.ui.activity.template.NavigationDrawer;
 import vn.dinosys.dinosys_apptemplate.ui.activity.template.ScrollingActivity;
 import vn.dinosys.dinosys_apptemplate.ui.activity.template.SettingsActivity;
@@ -36,10 +38,10 @@ public class MainActivity extends BaseActivity {
                     intent = new Intent(MainActivity.this, FullscreenActivity.class);
                     break;
                 case 2:
-                    intent = new Intent(MainActivity.this, FABActivity.class);
+                    intent = new Intent(MainActivity.this, MapsActivity.class);
                     break;
                 case 3:
-                    intent = new Intent(MainActivity.this, FABActivity.class);
+                    intent = new Intent(MainActivity.this, LoginActivity.class);
                     break;
                 case 4:
                     intent = new Intent(MainActivity.this, UserListActivity.class);

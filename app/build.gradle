@@ -19,6 +19,12 @@ android {
             keyPassword 'dino1234'
             storePassword 'dino1234'
         }
+        debug_key {
+            storeFile file("keystore/dinosys_debug_keystore.jks")
+            keyAlias 'DINOSYS_DEBUG_KEYSTORE'
+            keyPassword 'dino.dev'
+            storePassword 'dino.dev'
+        }
     }
 
     applicationVariants.all { variant ->
@@ -34,16 +40,19 @@ android {
         applicationId "vn.dinosys.dinosys_apptemplate"
         minSdkVersion 15
         targetSdkVersion 24
-
         archivesBaseName = "TemplateApp"
-        versionCode gitCommitCount
         versionName "1.0"
+        versionCode gitCommitCount
         signingConfig signingConfigs.release_key
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release_key
+        }
+        debug {
+            signingConfig signingConfigs.debug_key
         }
     }
     productFlavors {
@@ -68,12 +77,12 @@ dependencies {
     // Android Support AppCompat
     compile "com.android.support:appcompat-v7:${supportLibVersion}"
     compile "com.android.support:design:${supportLibVersion}"
+    compile "com.android.support:support-v4:${supportLibVersion}"
+    compile "com.android.support:recyclerview-v7:${supportLibVersion}"
     // Butter Knife
     compile "com.jakewharton:butterknife:${butterknifeLibVersion}"
     apt "com.jakewharton:butterknife-compiler:${butterknifeLibVersion}"
     // Fonts Support
     compile "uk.co.chrisjenx:calligraphy:${calligraphyLibVersion}"
-    compile 'com.android.support:support-v4:24.0.0'
-    compile 'com.android.support:recyclerview-v7:24.0.0'
-    compile 'com.android.support:design:24.0.0'
+    compile 'com.google.android.gms:play-services-maps:9.0.2'
 }
