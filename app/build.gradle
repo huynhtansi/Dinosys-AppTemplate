@@ -35,7 +35,7 @@ android {
     }
 
     compileSdkVersion 24
-    buildToolsVersion '24.0.1'
+    buildToolsVersion '24.0.0'
     defaultConfig {
         applicationId "vn.dinosys.dinosys_apptemplate"
         minSdkVersion 15
