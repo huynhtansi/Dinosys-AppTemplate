@@ -75,7 +75,7 @@ ext {
 }
 
 dependencies {
-    compile project(':data')
+    //compile project(':data')
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     // Android Support AppCompat
