@@ -35,7 +35,7 @@ android {
     }
 
     compileSdkVersion 24
-    buildToolsVersion '24.0.0'
+    buildToolsVersion '24.0.1'
     defaultConfig {
         applicationId "vn.dinosys.dinosys_apptemplate"
         minSdkVersion 15
@@ -69,7 +69,7 @@ android {
 }
 
 ext {
-    supportLibVersion = '24.0.0'
+    supportLibVersion = '24.1.1'
     butterknifeLibVersion = '8.1.0'
     calligraphyLibVersion = '2.2.0'
 }
