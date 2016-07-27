@@ -8,7 +8,7 @@ def getDate() {
     return formattedDate
 }
 
-def gitCommitCount = 100 + Integer.parseInt('git rev-list --count HEAD'.execute([], project.rootDir).text.trim())
+//def gitCommitCount = 100 + Integer.parseInt('git rev-list --count HEAD'.execute([], project.rootDir).text.trim())
 
 android {
 
@@ -42,7 +42,7 @@ android {
         targetSdkVersion 24
         archivesBaseName = "TemplateApp"
         versionName "1.0"
-        versionCode gitCommitCount
+        versionCode 1
         signingConfig signingConfigs.release_key
     }
     buildTypes {
